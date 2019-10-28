@@ -48,5 +48,10 @@ DATABASES = {
 
 
 # Перенос данных
+pg_dump -U user -F c -f dump.tar.gz db_name
+pg_restore -h hostname -U username -F format -d dbname dumpfile
+
+or
+
 ./manage.py dumpdata > dump.json
 ./manage.py loaddata dump.json
