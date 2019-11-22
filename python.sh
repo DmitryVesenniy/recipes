@@ -6,7 +6,7 @@ sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev python3-d
 #sudo apt-get install libpq-dev # пакеты для PostGre
 
 cd /usr/src
-sudo wget https://www.python.org/ftp/python/3.x.x/Python-3.8.0.tgz
+sudo wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz
 sudo tar xzf Python-3.8.0.tgz
 
 cd Python-3.8.0
