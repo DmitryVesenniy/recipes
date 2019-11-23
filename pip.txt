@@ -1,0 +1,17 @@
+# Установка
+pip install <packeg>
+
+# Переустановка
+pip install -U <packeg>
+
+# Установка списка пакетов из файла
+pip install -r requirements.txt
+
+# Если у вас последняя версия пакета, но вы хотите принудительно переустановить его
+pip install --force-reinstall
+
+# Посмотреть список установленных пакетов Python можно с помощью команды
+pip list > requirements.txt
+
+# Когда пакет больше не нужен
+pip uninstall <имя_пакета>
