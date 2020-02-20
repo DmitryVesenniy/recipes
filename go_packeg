@@ -1,0 +1,16 @@
+go get github.com/joho/godotenv // Установка переменных окружения из файла
+go get github.com/gorilla/mux // роутинг
+go get github.com/gorilla/websocket
+go get github.com/gorilla/schema
+go get go.mongodb.org/mongo-driver/mongo // -
+go get github.com/aws/aws-sdk-go // Работа с хроанилищем s3
+go get github.com/denisenkom/go-mssqldb // MsSQl
+
+go get -u github.com/gin-gonic/gin // вэб-фреймворк
+go get go.uber.org/zap // самый быстрый логер
+
+
+// Управление зависимостями
+sudo apt install go-dep
+dep init
+// Будет создана папка vendor и несколько файлов с описанием всех зависимостей

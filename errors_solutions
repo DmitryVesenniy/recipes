@@ -1,0 +1,8 @@
+#django migrate (postgres)
+    error:
+        django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_permission_pkey"
+        DETAIL:  Key (id)=(65) already exists.
+
+    psql:
+        SELECT MAX(id)+1 FROM auth_permission;
+        ALTER SEQUENCE auth_permission_id_seq RESTART WITH 73
