@@ -18,4 +18,6 @@ SHOW TABLE STATUS [FROM db_name]; - статистика по всем табл�
 ALTER TABLE my_frends ADD adress_2 TEXT; - вставляем колонку adress_2 в таблицу my_frends
 ALTER TABLE 'table_name' drop column 'column_name'; - удаляем столбец
 
+CREATE TABLE <table_name> (pk INT AUTO_INCREMENT PRIMARY KEY);
+
 quit;
