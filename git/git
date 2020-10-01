@@ -98,6 +98,25 @@ git stash drop 0
 # Тоже что и git stash drop, только удаляет все тайники
 git stash clear
 
+# Несколько коммитов в один
+git checkout master && git pull && git branch -b <НоваяВетка> && git merge <СтараяВеткаГдеМногоКомитов> --squash
 
+# поставит все ваши комиты в конец списка всех комитов
+git rebase
 
+# изменения включаются из одну ветку в другую не посредством merge, а посредством rebase:
+git rebase "another_branch"
 
+# mожно руками отредактировать несколько ваших комитов — например склеить их, изменить коментарий:
+git rebase -i {HEAD~_commit_count_|commit_hash}
+
+# удаляет из ветки на сервере все коммиты, которых нет в локальной версии, и записывает новые.
+git push -f (git push --force)
+
+# заставляет команду завершиться с ошибкой, если в удалённом репозитории есть коммиты, добавленные другими пользователями.
+git push --force-with-lease
+
+# схлопываем коммиты
+git reset --hard <commit_hash>
+git merge --squash HEAD@{1}
+git push --force-with-lease
