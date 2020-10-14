@@ -21,7 +21,7 @@
 
 ## Scaffold	Usage
 # Component	
-  ng g component my-new-component
+  ng g component my-new-component --skipTests
 
 # Directive	
   ng g directive my-new-directive
