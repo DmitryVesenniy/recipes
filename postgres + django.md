@@ -9,12 +9,17 @@ psql -h localhost -d mydatabase -U myuser -p <port>
 
 CREATE DATABASE myproject;
 CREATE USER myprojectuser WITH PASSWORD 'password';
+||
+CREATE ROLE myprojectuser LOGIN PASSWORD 'password';
+CREATE DATABASE myproject OWNER myprojectuser;
 
 ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
 ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';
 ALTER ROLE myprojectuser SET timezone TO 'UTC';
 
 GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to myprojectuser;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO myprojectuser;
 
 >> psql -d dataBase
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to jerry;

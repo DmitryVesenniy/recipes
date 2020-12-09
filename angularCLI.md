@@ -1,3 +1,6 @@
+## Update angular
+    ng update @angular/cli @angular/core
+
 ## Generating and serving an Angular project via a development server
   ng new PROJECT-NAME
   cd PROJECT-NAME

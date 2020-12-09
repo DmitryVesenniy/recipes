@@ -1,0 +1,6 @@
+pm2 start server.js
+
+pm2 describe pm2-logrotate. 
+Это вернет много информации. То, что вы ищете, - это script id
+
+pm2 stop 0

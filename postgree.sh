@@ -4,6 +4,7 @@ sudo -i -u postgres
 psql
 
 #     dump
-# pg_dump db_name > db_dump.sql
+# pg_dump -U user -h 127.0.0.1 database > db_dump.sql
 #     import
 # psql -h 127.0.0.1 -d db_name -U user -f db_dump.sql
+
