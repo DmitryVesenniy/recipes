@@ -4,7 +4,7 @@ sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-con
 # входим в систему postgres=#
 sudo -u postgres psql
 # Входим под конкреtным юзером
-psql -h localhost -d mydatabase -U myuser -p <port>
+sudo -u postgres psql -h localhost -d mydatabase -U myuser -p <port>
 
 
 CREATE DATABASE myproject;

@@ -53,3 +53,9 @@ kompose convert --file ../docker-compose.yml
 #docker-compose
 
 sudo docker-compose -f docker-compose.override.yml up --build
+
+# сменить место хранения образов и контейнеров
+sudo service docker stop
+sudo mv /var/lib/docker /a/new/location
+sudo ln -s /a/new/location /var/lib/docker # Create a symbolic link
+sudo service docker start

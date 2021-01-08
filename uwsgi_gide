@@ -1,0 +1,5 @@
+uwsgi --ini minisites/uwsgi.ini запуск
+
+uwsgi --stop /tmp/project-master.pid остановка
+
+uwsgi --stop /tmp/project-minisites.pid
