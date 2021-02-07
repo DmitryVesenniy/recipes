@@ -5,3 +5,8 @@ sudo tar -C /usr/lib/go<version> -xzf go<version>.linux-amd64.tar.gz
 export PATH=$PATH:/usr/lib/go<version>/go-1.15/bin || ln -s /usr/lib/go<version>/go-1.15/bin/go /usr/bin/go
 # Дальше нужно сообщить Go, где находится наша папка для проектов, для этого с помощью GOPATH:
 export GOPATH=$HOME/work/
+
+sudo nano ~/.profile
+
+export GOPATH=/media/jack/libs/go
+export PATH=$PATH:$GOPATH/bin:/usr/lib/go1.15.8/go/bin

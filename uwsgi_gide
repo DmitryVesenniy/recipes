@@ -1,4 +1,4 @@
-uwsgi --ini minisites/uwsgi.ini запуск
+uwsgi --ini piatzvezd/uwsgi.ini запуск
 
 uwsgi --stop /tmp/project-master.pid остановка
 
