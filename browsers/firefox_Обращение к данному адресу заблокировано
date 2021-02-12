@@ -1,0 +1,4 @@
+about:config
+
+network.security.ports.banned.override -> string
+    задать через запятую нужные порты

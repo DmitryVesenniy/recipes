@@ -151,3 +151,17 @@ git push --force-with-lease
 Колммит будет изменен, но комментарий останется прежний
     git commit --amend --no-edit
 
+# показать все ветки репозитория
+git branch -a
+
+# Список удаленных веток:
+git branch -r
+
+# список локальных веток и дополнительную информацию о том, какая из веток отслеживается
+git branch -vv
+
+# обновит все локальные копии удаленных ветвей.
+for b in `git branch -r | grep -v -- '->'`; do git branch --track ${b##origin/} $b; done
+git fetch --all
+git pull --all
+

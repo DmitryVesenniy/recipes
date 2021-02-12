@@ -3,7 +3,7 @@
 Для установки **PgAdmin 4** через **pip** необходимо выполнить команды:
 ```
 sudo apt-get install python3-pip build-essential python3-dev libssl-dev libffi-dev
-sudo pip3 install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.18/pip/pgadmin4-4.18-py2.py3-none-any.whl
+sudo pip3 install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.29/pip/pgadmin4-4.29-py3-none-any.whl
 ```
 Для инициализации конфигурации в директории */usr/local/lib/python3.5/dist-packages/pgadmin4/* необходимо создать 
 файл *config_local.py*:
