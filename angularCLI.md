@@ -52,3 +52,8 @@
 
 # Error: ENOSPC: System limit for number of file watchers reached
   echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+# Mobile
+https://capacitorjs.com/solution/angular
+
+# material

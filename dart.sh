@@ -22,4 +22,6 @@ echo 'export PATH="$PATH:/media/jack/libs/FlutterSDK/flutter/bin"' >> ~/.profile
 flutter precache
 
 flutter config --android-studio-dir="C:\Program Files\Android\Android Studio"
+flutter config --android-sdk="/run/media/dmitry/libs/Android/Sdk"
+
 flutter doctor

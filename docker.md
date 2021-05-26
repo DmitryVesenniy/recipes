@@ -59,3 +59,6 @@ sudo service docker stop
 sudo mv /var/lib/docker /a/new/location
 sudo ln -s /a/new/location /var/lib/docker # Create a symbolic link
 sudo service docker start
+
+# войти в запущенный контейнер
+docker exec -i -t fd361f2c9d87 /bin/sh

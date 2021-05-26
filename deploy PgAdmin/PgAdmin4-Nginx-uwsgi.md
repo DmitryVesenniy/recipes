@@ -26,8 +26,11 @@ sudo apt-get install uwsgi-core uwsgi-plugin-python3
 ```
 Для проверки неоходимо запустить **uwsgi** командой 
 ```
-sudo uwsgi --http-socket :8000 --plugin python3 --chdir /usr/local/lib/python3.5/dist-packages/pgadmin4/ 
+sudo uwsgi --http-socket :10000 --plugin python3 --chdir /usr/local/lib/python3.5/dist-packages/pgadmin4/ 
 --wsgi-file /usr/local/lib/python3.5/dist-packages/pgadmin4/pgAdmin4.wsgi
+```
+```
+sudo uwsgi socket /tmp/pgadmin.sock --plugin python3 --chdir /usr/local/lib/python3.5/dist-packages/pgadmin4/ --wsgi-file /usr/local/lib/python3.5/dist-packages/pgadmin4/pgAdmin4.wsgi
 ```
 и открыть в браузере ссылку *http://localhost:8000*
 Далее необходимо создать сервис uwsgi с использованием systemd. Для этого необходимо в директории

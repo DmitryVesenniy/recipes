@@ -1,0 +1,9 @@
+ https://editor.swagger.io/
+ 
+ // swagger
+const swaggerUI = require('swagger-ui-express');
+const swaggerDocument = require('../json_templates/api.json');
+
+....
+
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
