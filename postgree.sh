@@ -35,19 +35,22 @@ GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO myprojectuser;
 sudo -u postgres psql -h localhost -d mydatabase -U myuser -p <port>
 
 # создаем роль для базы
-CREATE ROLE username WITH
-  LOGIN
-  NOSUPERUSER
-  INHERIT
-  NOCREATEDB
-  NOCREATEROLE
-  NOREPLICATION
-  ENCRYPTED PASSWORD 'passwordstring';
-
+CREATE ROLE username WITH LOGIN NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION ENCRYPTED PASSWORD 'passwordstring';
 COMMENT ON ROLE localtez IS 'description';
+
+# создаем БД
+CREATE DATABASE database OWNER username;
+GRANT permissions ON DATABASE dbname TO username;
 
 # dump
 pg_dump -U user -h 127.0.0.1 database > db_dump.sql
 # import
 psql -h 127.0.0.1 -d db_name -U user -f db_dump.sql
+# найти все версии psql
+sudo find /usr -wholename '*/bin/postgres'
+
+# установить пароль пользователя postgress
+su - postgres
+psql -p 55432
+ALTER USER postgres PASSWORD 'newPassword';
 
