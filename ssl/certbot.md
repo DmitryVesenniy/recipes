@@ -46,3 +46,9 @@ server {
     expires max;
     return 301 https://www.example.com$request_uri;
 }
+
+location /.well-known {
+        root /var/www/html;
+    }
+
+
