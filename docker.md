@@ -8,6 +8,13 @@ docker stop $(docker ps -a -q) #остановить все докер конт�
 sudo docker image prune -a -f     #удалить все образы(не запущенные)
 sudo docker container prune -f    #удалить все контейнеры(не используемые)
 
+# остановить все контейнеры
+docker stop $(docker ps -a -q)
+# удалить все контейнеры
+docker rm $(docker ps -a -q)
+# удалить все образы
+docker rmi $(docker images -q)
+
 # сборка
   docker build -t go_hw:v1 . # go_hw:v1 - имя контейнера
   docker run go_hw:v1 # Запуск нужного контейнера
@@ -46,6 +53,11 @@ sudo docker run --add-host=database:192.168.43.179 -p 8080:8000 -v $(pwd):/var/w
 sudo docker run -p 9090:9090 -ti harisekhon/hbase
 
 sudo docker stop temp
+
+# Пробросить текущую директорию в docker
+# $(pwd) - текущая директория (./), /var/Public - адрес внутри контейнера
+ -v $(pwd):/var/Public 
+
 
 # Пример создания динамического pods
 kompose convert --file ../docker-compose.yml
