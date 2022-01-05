@@ -42,15 +42,24 @@ COMMENT ON ROLE localtez IS 'description';
 CREATE DATABASE database OWNER username;
 GRANT permissions ON DATABASE dbname TO username;
 
+# установить пароль пользователя postgress
+su - postgres
+psql -p 55432
+ALTER USER postgres PASSWORD 'newPassword';
+
+# поменять кодировку
+UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
+DROP DATABASE Template1;
+CREATE DATABASE template1 WITH owner=postgres ENCODING = 'UTF-8' lc_collate = 'en_US.utf8' lc_ctype = 'en_US.utf8' template template0;
+UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
+
+CREATE DATABASE database OWNER username;
+
+set client_encoding='utf8';
+
 # dump
 pg_dump -U user -h 127.0.0.1 database > db_dump.sql
 # import
 psql -h 127.0.0.1 -d db_name -U user -f db_dump.sql
 # найти все версии psql
 sudo find /usr -wholename '*/bin/postgres'
-
-# установить пароль пользователя postgress
-su - postgres
-psql -p 55432
-ALTER USER postgres PASSWORD 'newPassword';
-

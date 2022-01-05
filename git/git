@@ -165,3 +165,8 @@ for b in `git branch -r | grep -v -- '->'`; do git branch --track ${b##origin/} 
 git fetch --all
 git pull --all
 
+# удалить файл из коммита
+git checkout <commit_id> <path_to_file>
+
+# Посмотреть историю изменений
+git blame --ignore-rev 301b7ec sourcefile.py
