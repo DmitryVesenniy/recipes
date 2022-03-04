@@ -47,6 +47,9 @@ su - postgres
 psql -p 55432
 ALTER USER postgres PASSWORD 'newPassword';
 
+# добавить колонку в таблицу
+ALTER TABLE table ADD COLUMN column int4 NULL;
+
 # поменять кодировку
 UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
 DROP DATABASE Template1;
@@ -56,6 +59,9 @@ UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
 CREATE DATABASE database OWNER username;
 
 set client_encoding='utf8';
+
+# установить пароль для postgres
+ALTER USER postgres PASSWORD 'password';
 
 # dump
 pg_dump -U user -h 127.0.0.1 database > db_dump.sql

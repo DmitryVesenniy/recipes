@@ -45,10 +45,6 @@ sudo docker run --add-host=database:192.168.43.179 -p 8080:8000 -v $(pwd):/var/w
 
     CMD python3 -m unittest test.py       # строка которая будет работать при запуске контейнер
     
-    
-    
-    
-    
 #Пример запуска hbase из dockera
 sudo docker run -p 9090:9090 -ti harisekhon/hbase
 

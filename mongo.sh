@@ -19,3 +19,6 @@ mongorestore /home/jack/backup/
 #errors services
 chown -R mongodb:mongodb /var/lib/mongodb
 chown mongodb:mongodb /tmp/mongodb-27017.sock
+
+# файл конфигурации
+nano /etc/mongod.conf
