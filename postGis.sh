@@ -1,6 +1,20 @@
 sudo apt install postgis postgresql-xx-postgis-x
 # sudo apt install postgis postgresql-13-postgis-3
 
+
+# установка в базу
+psql -d db  -U postgres -c "CREATE EXTENSION postgis;"
+psql -d db  -U postgres -c "CREATE EXTENSION postgis_topology;"
+psql -d db  -U postgres -c "CREATE EXTENSION postgis_sfcgal;"
+psql -d db  -U postgres -c "CREATE EXTENSION fuzzystrmatch"
+psql -d db  -U postgres -c "CREATE EXTENSION postgis_sfcgal;"        
+psql -d db  -U postgres -c "CREATE EXTENSION postgis_tiger_geocoder;" 
+psql -d db  -U postgres -c "CREATE EXTENSION address_standardizer;"    
+
+
+
+
+
 // опустить высоту из точки на Linestring
 SELECT
     ST_ClosestPoint(segment_centerline.shape::geometry, ?::geography::geometry ) AS point
