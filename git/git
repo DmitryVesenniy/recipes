@@ -170,3 +170,10 @@ git checkout <commit_id> <path_to_file>
 
 # Посмотреть историю изменений
 git blame --ignore-rev 301b7ec sourcefile.py
+
+# собирает все коммиты из целевой ветки 
+git fetch
+# приведи пожалуйста файловую структуру и историю коммитов моей ветки к тому состоянию, в котором сейчас находится ветка origin/master
+git reset --hard origin/main
+# удаляет все не закомиченные файлы со сцены
+git clean -d -f

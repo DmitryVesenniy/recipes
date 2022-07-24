@@ -15,6 +15,12 @@ systemctl enable postgresql
 # входим в систему postgres=#
 sudo su - postgres
 
+## MACOS
+psql -l
+# postgres  |<owner> | UTF8     | C       | C     |
+sudo psql -U <owner> -d postgres
+
+
 sudo -u postgres psql -h localhost -d mydatabase -U myuser -p <port>
 
 # создаем супер роль
