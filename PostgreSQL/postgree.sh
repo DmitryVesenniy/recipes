@@ -56,6 +56,11 @@ ALTER USER postgres PASSWORD 'newPassword';
 # добавить колонку в таблицу
 ALTER TABLE table ADD COLUMN column int4 NULL;
 
+# дать доступ к таблице
+GRANT SELECT ON TABLE "myapp"."table" TO <user>;
+GRANT SELECT ON TABLE "myapp"."table" TO <user>;
+GRANT SELECT (id, name) ON TABLE myapp.<table> TO <user>;
+
 # поменять кодировку
 UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
 DROP DATABASE Template1;

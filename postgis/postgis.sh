@@ -29,7 +29,20 @@ CREATE TABLE IF NOT EXISTS object_on_road (
     FOREIGN KEY (property_id) REFERENCES item (Id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE CASCADE
 );
 # добавить колонку point
-SELECT AddGeometryColumn('', 'object_on_road', 'point', 4326, 'MULTIPOINT', 3);
+SELECT AddGeometryColumn('', 'object_on_road', 'point', 4326, 'MULTIPOINT', 2);
+
+# !!создать таблицу добавить геоиндексы
+CREATE TABLE IF NOT EXISTS <tablename> (
+    id SERIAL PRIMARY KEY,
+    geo_type VARCHAR(50),
+    description VARCHAR(500),
+    sort_order INTEGER,
+    color_code VARCHAR(10),
+    geo_column geography
+);
+
+CREATE INDEX <tablename>_gix ON <tablename> USING GIST ( geo_column ); 
+CREATE INDEX <tablename>_oid_idx ON <tablename> (id);
 
 # пример вставки
 INSERT INTO public.object_on_road(
