@@ -1,0 +1,19 @@
+poetry new maindir
+
+# говорим что нам нужно вирт.окружение в текущей папке
+poetry config virtualenvs.in-project true
+
+poetry shell
+poetry add <package>
+
+# усановить свое вирт.окружение
+poetry env use ./.venv/bin/python
+
+# посмотреть текущее вирт.окружение
+poetry env info 
+
+# установка всех зависимостей
+poetry install
+
+# старт приложения 
+poetry run python manage.py runserver

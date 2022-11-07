@@ -3,17 +3,17 @@ sudo docker ps -as      #Посмотреть все контейнеры
 sudo docker rm test     #Удалить контейнер (может понадобится нмер)
 sudo docker rmi test     #Удалить образы
 
-docker stop $(docker ps -a -q) #остановить все докер контейнеры
+sudo docker stop $(docker ps -a -q) #остановить все докер контейнеры
 
 sudo docker image prune -a -f     #удалить все образы(не запущенные)
 sudo docker container prune -f    #удалить все контейнеры(не используемые)
 
 # остановить все контейнеры
-docker stop $(docker ps -a -q)
+sudo docker stop $(docker ps -a -q)
 # удалить все контейнеры
-docker rm $(docker ps -a -q)
+sudo docker rm $(docker ps -a -q)
 # удалить все образы
-docker rmi $(docker images -q)
+sudo docker rmi $(docker images -q)
 
 # сборка
   docker build -t go_hw:v1 . # go_hw:v1 - имя контейнера
@@ -22,6 +22,9 @@ docker rmi $(docker images -q)
 sudo docker build -t test -f Dockerfile.test .   #Собираем контейнер test - имя контейнера, Dockerfile.test - файл, изх которого будет делаться контейнер
 
 sudo docker run test    #Запускаем контейнер
+
+# запуск контейнера по названием name из образа wms
+sudo docker run -d -v $(pwd):/var/mapserver/ -p 8080:80 --name mapserver wms
 
 По-умолчанию Docker кеширует каждый шаг и формируя кеш сборок. Чтобы отключить кеш, например для использования последнего apt-get update, используйте флаг --no-cache.
 docker build --no-cache -t trukhinyuri/nginx

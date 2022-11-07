@@ -16,6 +16,7 @@ systemctl enable postgresql
 sudo su - postgres
 
 ## MACOS
+brew services start postgresql
 psql -l
 # postgres  |<owner> | UTF8     | C       | C     |
 sudo psql -U <owner> -d postgres
@@ -60,6 +61,7 @@ ALTER TABLE table ADD COLUMN column int4 NULL;
 GRANT SELECT ON TABLE "myapp"."table" TO <user>;
 GRANT SELECT ON TABLE "myapp"."table" TO <user>;
 GRANT SELECT (id, name) ON TABLE myapp.<table> TO <user>;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE "public"."library_styles" TO devroadtool;
 
 # поменять кодировку
 UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
